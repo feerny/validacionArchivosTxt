@@ -46,9 +46,9 @@ arrayMaterial1.map(data=>{
 
    modeloComplet=""
 })
-console.log(`Material,               Modelo,`);
+console.log(`Material,                              Modelo,`);
 objetFinal.map(data=>{
-    console.log(`${data.material},               ${data.modelo},`);
+    console.log(`${data.material},                              ${data.modelo},`);
 })
 
 
