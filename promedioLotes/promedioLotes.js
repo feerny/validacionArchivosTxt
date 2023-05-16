@@ -1,17 +1,16 @@
 const fs = require("fs");
 let arrayModelos1=fs.readFileSync('./modelos1.txt', 'utf-8').replace(/(\r\n|\n|\r)/gm, "").split("/");
 let arrayModelos2=fs.readFileSync('./modelos2.txt', 'utf-8').replace(/(\r\n|\n|\r)/gm, "").split("/");
-let cantidades2=fs.readFileSync('./cantidades2.txt', 'utf-8').replace(/(\r\n|\n|\r)/gm, "").split("/");
+let lotes2=fs.readFileSync('./lotes2.txt', 'utf-8').replace(/(\r\n|\n|\r)/gm, "").split("/");
 
 
 var objet=[];
 var objet2=[];
 
-
 for (let i = 0; i < arrayModelos2.length; i++) {
     objet2.push({
         modelo:arrayModelos2[i],
-        cantidad: parseInt(cantidades2[i])
+        lote: parseInt(lotes2[i])
     })
 }
 
@@ -19,17 +18,19 @@ arrayModelos1.map(data=>{
     objet.push(data.split("-"))
 })
 
+
 objet.map(data=>{
-    var suma=0;
+    var promLotes=[];
     data.map(data2=>{
        const filterarray= objet2.filter(data3=>data3.modelo===data2)
        filterarray.map(data4=>{
-        suma=suma+data4.cantidad
+        promLotes.push(data4.lote)
        })
 
     })
-    console.log(suma);
-    suma=0
+    function getAverageAge(users) {
+        return users.reduce((prev, user) => prev + user, 0) / users.length;
+      }
+    console.log(getAverageAge(promLotes));
+    promLotes=[]
 })
-
-
