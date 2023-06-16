@@ -1,9 +1,9 @@
 const fs = require("fs");
-let arrayMaterial1 = fs.readFileSync('./material1.txt', 'utf-8').replace(/(\r\n|\n|\r)/gm, "").split("/");
-let arrayCantidad1 = fs.readFileSync('./cantidad1.txt', 'utf-8').replace(/(\r\n|\n|\r)/gm, "").split("/");
-let arrayMaterial2 = fs.readFileSync('./material2.txt', 'utf-8').replace(/(\r\n|\n|\r)/gm, "").split("/");
-let arrayCantidad2 = fs.readFileSync('./cantidad2.txt', 'utf-8').replace(/(\r\n|\n|\r)/gm, "").split("/");
-let arrayReferencia = fs.readFileSync('./ref.txt', 'utf-8').replace(/(\r\n|\n|\r)/gm, "").split("/");
+let arrayMaterial1 = fs.readFileSync('./material1.txt', 'utf-8').replace(/(\n|\n)/gm, "").split("\r");
+let arrayCantidad1 = fs.readFileSync('./cantidad1.txt', 'utf-8').replace(/(\n|\n)/gm, "").split("\r");
+let arrayMaterial2 = fs.readFileSync('./material2.txt', 'utf-8').replace(/(\n|\n)/gm, "").split("\r");
+let arrayCantidad2 = fs.readFileSync('./cantidad2.txt', 'utf-8').replace(/(\n|\n)/gm, "").split("\r");
+let arrayReferencia = fs.readFileSync('./ref.txt', 'utf-8').replace(/(\n|\n)/gm, "").split("\r");
 let arrayFecha = fs.readFileSync('./fecha.txt', 'utf-8').replace(/(\n|\n)/gm, "").split("\r");
 
 var objet1 = [];
